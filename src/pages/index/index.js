@@ -9,6 +9,8 @@ import url from 'js/api.js'
 import { InfiniteScroll } from 'mint-ui';
 Vue.use(InfiniteScroll);
 
+//导入底部导航栏Foot组件
+import Foot from 'components/Foot.vue'
 
 let app = new Vue({
   el: '#app',
@@ -48,5 +50,8 @@ let app = new Vue({
         this.pageNum++
       })
     }
+  },
+  components: {
+    Foot
   }
 })
