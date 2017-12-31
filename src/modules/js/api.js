@@ -1,5 +1,6 @@
 let url = {
-  hotLists: '/index/hotLists'
+  hotLists: '/index/hotLists',
+  banner: '/index/banner'
 }
 
 //注意开发环境和上线(真实场景)的切换
@@ -13,6 +14,6 @@ for (let key in url) {
 }
 
 //test => node api.js
-//console.log(url.hotLists)
+//console.log(url.banner)
 
 export default url

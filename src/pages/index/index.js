@@ -9,13 +9,15 @@ import url from 'js/api.js'
 import { InfiniteScroll } from 'mint-ui';
 Vue.use(InfiniteScroll);
 
-//导入底部导航栏Foot组件
+//导入组件
 import Foot from 'components/Foot.vue'
+import Swiper from 'components/Swiper.vue'
 
 let app = new Vue({
   el: '#app',
   data: {
     lists: null,
+    bannerLists: null,
     pageNum: 1,
     pageSize: 6,
     loading: false,
@@ -23,7 +25,8 @@ let app = new Vue({
   },
   //created可以拿到Vue的实例(this)
   created() {
-    this.getLists()
+    this.getLists(),
+    this.banner()
   },
   methods: {
     getLists() {
@@ -49,9 +52,16 @@ let app = new Vue({
         this.loading = false
         this.pageNum++
       })
+    },
+    banner() {
+      axios.get(url.banner)
+        .then(res => {
+          this.bannerLists = res.data.lists
+        })
     }
   },
   components: {
-    Foot
+    Foot,
+    Swiper
   }
 })
