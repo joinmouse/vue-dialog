@@ -26,7 +26,7 @@ module.exports = {
       '@': resolve('src'),
       //增加别名配置
       'css': '@/modules/css',
-      'js': '@/modules/css',
+      'js': '@/modules/js',
       'components': '@/components'
     }
   },
